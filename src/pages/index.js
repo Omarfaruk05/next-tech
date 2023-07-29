@@ -1,11 +1,18 @@
+import Featured from "@/components/Featured";
+import FeaturedProduct from "@/components/FeaturedProduct";
+import Hero from "@/components/Hero";
 import Head from "next/head";
 const HomePage = () => {
   return (
     <div>
       <Head>
-        <title>Next TECH</title>
+        <title>NEXT TECH</title>
       </Head>
-      <h1 className="text-xl font-bold">Welcome To Next Tech Home Page</h1>
+      <div>
+        <Hero />
+        <Featured />
+        <FeaturedProduct />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="bg-slate-200">
+    <div className="bg-slate-200 sticky top-0">
       <div className="max-w-7xl mx-auto text-green-800">
         <div className="navbar">
           <div className="navbar-start">
@@ -29,19 +29,31 @@ const Navbar = () => {
                   <a>Category</a>
                   <ul className="p-2">
                     <li>
-                      <a>Submenu 1</a>
+                      <a className="font-semibold">Processor</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a className="font-semibold">Motherboard</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">Monitor</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">RAM</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">Power Supply</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">Others</a>
                     </li>
                   </ul>
                 </li>
-                <li>
+                {/* <li>
                   <a>Item 1</a>
                 </li>
                 <li>
                   <a>Item 2</a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <a className="font-semibold normal-case FONT text-2xl">NEXT TECH</a>
@@ -55,20 +67,32 @@ const Navbar = () => {
                   </summary>
                   <ul className="p-2 w-60 rounded-md">
                     <li>
-                      <a>Submenu 1</a>
+                      <a className="font-semibold">Processor</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a className="font-semibold">Motherboard</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">Monitor</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">RAM</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">Power Supply</a>
+                    </li>
+                    <li>
+                      <a className="font-semibold">Others</a>
                     </li>
                   </ul>
                 </details>
               </li>
-              <li className="uppercase font-semibold">
+              {/* <li className="uppercase font-semibold">
                 <a>Item 1</a>
               </li>
               <li className="uppercase font-semibold">
                 <a>Item 2</a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="navbar-end">

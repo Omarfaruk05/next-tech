@@ -50,10 +50,10 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </li>
+                <li>
+                  <a>Item 1</a>
+                </li>
                 {/* <li>
-                    <a>Item 1</a>
-                  </li>
-                  <li>
                     <a>Item 2</a>
                   </li> */}
               </ul>
@@ -97,11 +97,15 @@ const Navbar = () => {
               </li>
               {/* <li className="uppercase font-semibold">
                   <a>Item 1</a>
-                </li>
-                <li className="uppercase font-semibold">
-                  <a>Item 2</a>
                 </li> */}
             </ul>
+            <Link href={`/pcBuilder`}>
+              {" "}
+              <button className="btn text-white bg-gradient-to-r from-teal-500 to-purple-700">
+                {" "}
+                PC Builder
+              </button>
+            </Link>
           </div>
           <div className="navbar-end">
             <button className="btn btn-sm mr-2 rounded-md bg-purple-200 text-green-800 border-none hover:bg-purple-300">

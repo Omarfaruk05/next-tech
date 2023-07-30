@@ -1,6 +1,6 @@
 import ProductCart from "./ProductCart";
 
-const FeaturedProduct = ({ heading, fetchPath, products }) => {
+const FeaturedProduct = ({ heading, fetchPath, products, pcBuild }) => {
   const nums = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <div className="bg-slate-100">
@@ -11,7 +11,11 @@ const FeaturedProduct = ({ heading, fetchPath, products }) => {
         <p className="text-center">Check & Get Your Desired Product!</p>
         <div className="flex flex-wrap gap-4 justify-center md:justify-between">
           {products.map((product) => (
-            <ProductCart product={product} key={product?._id} />
+            <ProductCart
+              product={product}
+              key={product?._id}
+              pcBuild={pcBuild}
+            />
           ))}
         </div>
       </div>

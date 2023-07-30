@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Navbar = () => {
   return (
     <div className="bg-slate-200 sticky top-0">
@@ -49,14 +51,20 @@ const Navbar = () => {
                   </ul>
                 </li>
                 {/* <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li> */}
+                    <a>Item 1</a>
+                  </li>
+                  <li>
+                    <a>Item 2</a>
+                  </li> */}
               </ul>
             </div>
-            <a className="font-semibold normal-case FONT text-2xl">NEXT TECH</a>
+
+            <Link
+              className="font-semibold normal-case FONT text-2xl"
+              href={`/`}
+            >
+              NEXT TECH
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -88,11 +96,11 @@ const Navbar = () => {
                 </details>
               </li>
               {/* <li className="uppercase font-semibold">
-                <a>Item 1</a>
-              </li>
-              <li className="uppercase font-semibold">
-                <a>Item 2</a>
-              </li> */}
+                  <a>Item 1</a>
+                </li>
+                <li className="uppercase font-semibold">
+                  <a>Item 2</a>
+                </li> */}
             </ul>
           </div>
           <div className="navbar-end">

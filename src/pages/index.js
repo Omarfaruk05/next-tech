@@ -2,7 +2,12 @@ import Featured from "@/components/Featured";
 import FeaturedProduct from "@/components/FeaturedProduct";
 import Hero from "@/components/Hero";
 import Head from "next/head";
-const HomePage = () => {
+import dynamic from "next/dynamic";
+
+const RootLayout = dynamic(() => import("../components/Layout/RootLayout"), {
+  ssr: false,
+});
+const HomePage = ({ products }) => {
   return (
     <div>
       <Head>
@@ -11,10 +16,25 @@ const HomePage = () => {
       <div>
         <Hero />
         <Featured />
-        <FeaturedProduct />
+        <FeaturedProduct heading={"Featured Products"} products={products} />
       </div>
     </div>
   );
 };
 
 export default HomePage;
+
+HomePage.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
+export const getStaticProps = async () => {
+  const res = await fetch(`${process.env.API_URL}/get-products`);
+  const products = await res.json();
+
+  const slicedProduct = products.sort(() => 0.5 - Math.random()).slice(0, 6);
+  // const catRes = await fetch(`${process.env.API_URL}/api/categories`);
+  // const category = await catRes.json();
+  console.log(slicedProduct);
+
+  return { props: { products: slicedProduct } };
+};

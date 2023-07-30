@@ -11,7 +11,7 @@ const CategoryProduct = ({ products }) => {
   const { categoryId } = router.query;
 
   return (
-    <div>
+    <div className="min-h-[70vh]">
       <FeaturedProduct
         heading={`Available ${categoryId}s `}
         fetchPath={categoryId}
@@ -31,7 +31,7 @@ CategoryProduct.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/product-category/${params.categoryId}`
+    `https://next-tech-backend.vercel.app/product-category/${params.categoryId}`
   );
   const data = await res.json();
 

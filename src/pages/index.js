@@ -32,9 +32,6 @@ export const getStaticProps = async () => {
   const products = await res.json();
 
   const slicedProduct = products.sort(() => 0.5 - Math.random()).slice(0, 6);
-  // const catRes = await fetch(`${process.env.API_URL}/api/categories`);
-  // const category = await catRes.json();
-  console.log(slicedProduct);
 
   return { props: { products: slicedProduct } };
 };

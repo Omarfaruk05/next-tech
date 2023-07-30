@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
+  console.log("fff", session);
+
   return (
     <div className="bg-slate-200 sticky top-0">
       <div className="max-w-7xl mx-auto text-green-800">
@@ -75,22 +80,39 @@ const Navbar = () => {
                   </summary>
                   <ul className="p-2 w-60 rounded-md">
                     <li>
-                      <a className="font-semibold">Processor</a>
+                      <a className="font-semibold">
+                        <Link href={"/category/processor"}>Processor</Link>
+                      </a>
                     </li>
                     <li>
-                      <a className="font-semibold">Motherboard</a>
+                      <a className="font-semibold">
+                        {" "}
+                        <Link href={"/category/monitor"}>Monitor</Link>
+                      </a>
                     </li>
                     <li>
-                      <a className="font-semibold">Monitor</a>
+                      <a className="font-semibold">
+                        {" "}
+                        <Link href={"/category/motherboard"}>Motherboard</Link>
+                      </a>
                     </li>
                     <li>
-                      <a className="font-semibold">RAM</a>
+                      <a className="font-semibold">
+                        {" "}
+                        <Link href={"/category/ram"}>RAM</Link>
+                      </a>
                     </li>
                     <li>
-                      <a className="font-semibold">Power Supply</a>
+                      <a className="font-semibold">
+                        {" "}
+                        <Link href={"/category/powerSupply"}>powerSupply</Link>
+                      </a>
                     </li>
                     <li>
-                      <a className="font-semibold">Others</a>
+                      <a className="font-semibold">
+                        {" "}
+                        <Link href={"/category/others"}>Others</Link>
+                      </a>
                     </li>
                   </ul>
                 </details>
@@ -108,12 +130,21 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-end">
-            <button className="btn btn-sm mr-2 rounded-md bg-purple-200 text-green-800 border-none hover:bg-purple-300">
-              Signup
-            </button>
-            <button className="btn btn-sm mr-2 rounded-md bg-purple-200 text-green-800 border-none hover:bg-purple-300">
-              Login
-            </button>
+            {session?.user ? (
+              <button
+                onClick={() => signOut()}
+                className="btn btn-sm mr-2 rounded-md bg-purple-200 text-green-800 border-none hover:bg-purple-300"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link
+                href={"/login"}
+                className="btn btn-sm mr-2 rounded-md bg-purple-200 text-green-800 border-none hover:bg-purple-300"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -12,6 +12,17 @@ const PcBuilder = () => {
   const { pcBuilder } = useSelector((state) => state.pcBuilder);
 
   const cpu = pcBuilder.find((product) => product.category === "Processor");
+  const monitor = pcBuilder.find((product) => product.category === "Monitor");
+  const motherboard = pcBuilder.find(
+    (product) => product.category === "motherBoard"
+  );
+  const RAM = pcBuilder.find((product) => product.category === "RAM");
+  const powerSupply = pcBuilder.find(
+    (product) => product.category === "powerSupply"
+  );
+  const storageDevice = pcBuilder.find(
+    (product) => product.category === "storageDevice"
+  );
 
   return (
     <div>
@@ -35,12 +46,9 @@ const PcBuilder = () => {
             </div>
             <div>
               {cpu ? (
-                <Link
-                  className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
-                  href={`/category/processor`}
-                >
+                <button className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white btn-sm ">
                   Delete
-                </Link>
+                </button>
               ) : (
                 <Link
                   className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
@@ -54,76 +62,147 @@ const PcBuilder = () => {
           <div className="flex justify-between items-center bordered border-2 p-4 rounded-md bg-base-200 mb-4">
             <div>
               <h2 className="text-xl font-semibold">Monitor</h2>
-              <p>BenQ BG12</p>
-              <small className="text-sm">Price</small>
+              {monitor && (
+                <>
+                  <p className="font-semibold">Name: {monitor?.productName}</p>
+                  <small className="text-sm font-semibold">
+                    Price: {monitor?.price}
+                    <span className="text-lg">৳</span>
+                  </small>
+                </>
+              )}
             </div>
             <div>
-              <Link
-                className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
-                href={`/category/monitor`}
-              >
-                Choose
-              </Link>
+              {monitor ? (
+                <button className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white btn-sm ">
+                  Delete
+                </button>
+              ) : (
+                <Link
+                  className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
+                  href={`/category/monitor`}
+                >
+                  Choose
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center bordered border-2 p-4 rounded-md bg-base-200 mb-4">
             <div>
               <h2 className="text-xl font-semibold">Motherboard</h2>
-              <p>Asuse b560-plus</p>
-              <small className="text-sm">Price:</small>
+              {motherboard && (
+                <>
+                  <p className="font-semibold">
+                    Name: {motherboard?.productName}
+                  </p>
+                  <small className="text-sm font-semibold">
+                    Price: {motherboard?.price}
+                    <span className="text-lg">৳</span>
+                  </small>
+                </>
+              )}
             </div>
             <div>
-              <Link
-                className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
-                href={`/category/motherboard`}
-              >
-                Choose
-              </Link>
+              {motherboard ? (
+                <button className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white btn-sm ">
+                  Delete
+                </button>
+              ) : (
+                <Link
+                  className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
+                  href={`/category/motherboard`}
+                >
+                  Choose
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center bordered border-2 p-4 rounded-md bg-base-200 mb-4">
             <div>
               <h2 className="text-xl font-semibold">RAM</h2>
-              <p>Team Delta 2</p>
-              <small className="text-sm">Price:</small>
+              {RAM && (
+                <>
+                  <p className="font-semibold">Name: {RAM?.productName}</p>
+                  <small className="text-sm font-semibold">
+                    Price: {RAM?.price}
+                    <span className="text-lg">৳</span>
+                  </small>
+                </>
+              )}
             </div>
             <div>
-              <Link
-                className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
-                href={`/category/ram`}
-              >
-                Choose
-              </Link>
+              {RAM ? (
+                <button className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white btn-sm ">
+                  Delete
+                </button>
+              ) : (
+                <Link
+                  className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
+                  href={`/category/ram`}
+                >
+                  Choose
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center bordered border-2 p-4 rounded-md bg-base-200 mb-4">
             <div>
               <h2 className="text-xl font-semibold">Power Supply</h2>
-              <p>Corsiar CV 550</p>
-              <small className="text-sm">Price:</small>
+              {powerSupply && (
+                <>
+                  <p className="font-semibold">
+                    Name: {powerSupply?.productName}
+                  </p>
+                  <small className="text-sm font-semibold">
+                    Price: {powerSupply?.price}
+                    <span className="text-lg">৳</span>
+                  </small>
+                </>
+              )}
             </div>
             <div>
-              <Link
-                className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
-                href={`/category/powerSupply`}
-              >
-                Choose
-              </Link>
+              {powerSupply ? (
+                <button className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white btn-sm ">
+                  Delete
+                </button>
+              ) : (
+                <Link
+                  className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
+                  href={`/category/powerSupply`}
+                >
+                  Choose
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center bordered border-2 p-4 rounded-md bg-base-200 mb-4">
             <div>
               <h2 className="text-xl font-semibold">Storage Device</h2>
-              <p>intel core i5 10500</p>
-              <small className="text-sm">Price</small>
+              {storageDevice && (
+                <>
+                  <p className="font-semibold">
+                    Name: {storageDevice?.productName}
+                  </p>
+                  <small className="text-sm font-semibold">
+                    Price: {storageDevice?.price}
+                    <span className="text-lg">৳</span>
+                  </small>
+                </>
+              )}
             </div>
             <div>
-              <Link
-                className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
-                href={`/category/storageDevice`}
-              >
-                Choose
-              </Link>
+              {storageDevice ? (
+                <button className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white btn-sm ">
+                  Delete
+                </button>
+              ) : (
+                <Link
+                  className="btn btn-outline btn-sm hover:text-purple-800 hover:bg-white hover:border-2"
+                  href={`/category/storageDevic`}
+                >
+                  Choose
+                </Link>
+              )}
             </div>
           </div>
         </div>

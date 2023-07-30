@@ -301,7 +301,7 @@ ProductDetails.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/get-product/${params.productId}`
+    `https://next-tech-backend.vercel.app/get-product/${params.productId}`
   );
   const data = await res.json();
 
